@@ -3,3 +3,6 @@
 *.dat
 __pycache__
 Script.gnu
+
+HVmodules/Inversion/last_params.txt
+HVmodules/Inversion/parametros_inv.txt
