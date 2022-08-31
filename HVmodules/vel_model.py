@@ -131,13 +131,13 @@ class Ui_ModVel(object):
         pass
 
     def retranslateUi(self, ModVel):
-        ModVel.setWindowTitle(QtWidgets.QApplication.translate("ModVel", "Modelo de velocidades", None, -1))
-        self.pushButton_savemod.setText(QtWidgets.QApplication.translate("ModVel", "Guardar Modelo", None, -1))
+        ModVel.setWindowTitle(QtWidgets.QApplication.translate("ModVel", "Velocity model", None, -1))
+        self.pushButton_savemod.setText(QtWidgets.QApplication.translate("ModVel", "Save model", None, -1))
         self.tableWidget_modelo.verticalHeaderItem(0).setText(QtWidgets.QApplication.translate("ModVel", "1", None, -1))
         self.tableWidget_modelo.verticalHeaderItem(1).setText(QtWidgets.QApplication.translate("ModVel", "2", None, -1))
         self.tableWidget_modelo.horizontalHeaderItem(0).setText(QtWidgets.QApplication.translate("ModVel", "prof (m)", None, -1))
-        self.tableWidget_modelo.horizontalHeaderItem(1).setText(QtWidgets.QApplication.translate("ModVel", "VP (m/s)", None, -1))
-        self.tableWidget_modelo.horizontalHeaderItem(2).setText(QtWidgets.QApplication.translate("ModVel", "VS (m/s)", None, -1))
+        self.tableWidget_modelo.horizontalHeaderItem(1).setText(QtWidgets.QApplication.translate("ModVel", "Vp (m/s)", None, -1))
+        self.tableWidget_modelo.horizontalHeaderItem(2).setText(QtWidgets.QApplication.translate("ModVel", "Vs (m/s)", None, -1))
 
 if __name__ == "__main__":
     import sys

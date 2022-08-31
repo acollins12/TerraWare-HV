@@ -89,11 +89,10 @@ class Ui_dialogVents(object):
 
 
     def retranslateUi(self, dialogpinver):
-        dialogpinver.setWindowTitle(QtWidgets.QApplication.translate("dialogpinver", "Parámetros de ventanas", None, -1))
-        self.groupBox_pinver.setTitle(QtWidgets.QApplication.translate("dialogpinver", "Parámetros de eliminación de ventana", None, -1))
-        self.label_iter.setText(QtWidgets.QApplication.translate("dialogpinver", "Máximo # de std: ", None, -1))
+        dialogpinver.setWindowTitle(QtWidgets.QApplication.translate("dialogpinver", "Window parameters", None, -1))
+        self.groupBox_pinver.setTitle(QtWidgets.QApplication.translate("dialogpinver", "Window filtering parameters", None, -1))
+        self.label_iter.setText(QtWidgets.QApplication.translate("dialogpinver", "Maximum # of std: ", None, -1))
         #self.label_parts.setText(QtWidgets.QApplication.translate("dialogpinver", "Tlta:", None, -1))
-        self.label_wini.setText(QtWidgets.QApplication.translate("dialogpinver", "% del primer pico:", None, -1))
-        self.label_wa.setText(QtWidgets.QApplication.translate("dialogpinver", "% del segundo pico:", None, -1))
+        self.label_wini.setText(QtWidgets.QApplication.translate("dialogpinver", "% of first peak:", None, -1))
+        self.label_wa.setText(QtWidgets.QApplication.translate("dialogpinver", "% of second peak:", None, -1))
         self.pushButton_info.setText(QtWidgets.QApplication.translate("dialogpinver", "Info", None, -1))
-

@@ -68,10 +68,10 @@ class Ui_pasabandas(object):
         self.doubleSpinBox_wfin.setProperty("value", 0.0)
 
     def retranslateUi(self, pasabandas):
-        pasabandas.setWindowTitle(QtWidgets.QApplication.translate("pasabandas", "Pasa bandas", None, -1))
-        self.groupBox_basabandas.setTitle(QtWidgets.QApplication.translate("pasabandas", "Frecuencias de corte", None, -1))
-        self.label_wini.setText(QtWidgets.QApplication.translate("pasabandas", "Frecuencia inicial", None, -1))
-        self.label_wfin.setText(QtWidgets.QApplication.translate("pasabandas", "Frecuencia final", None, -1))
+        pasabandas.setWindowTitle(QtWidgets.QApplication.translate("pasabandas", "Band-pass", None, -1))
+        self.groupBox_basabandas.setTitle(QtWidgets.QApplication.translate("pasabandas", "Cutoff frequency", None, -1))
+        self.label_wini.setText(QtWidgets.QApplication.translate("pasabandas", "Min frequency", None, -1))
+        self.label_wfin.setText(QtWidgets.QApplication.translate("pasabandas", "Max frequency", None, -1))
 
 if __name__ == "__main__":
     import sys

@@ -262,7 +262,7 @@ class Ui_Ventana_inversion(QtWidgets.QMdiSubWindow):
         self.mdiArea_inv.layout.addWidget(p)
         self.mdiArea_inv.layout.setMenuBar(NavigationToolbar(p, self.mdiArea_inv))
         self.mdiArea_inv.plotsis = p.figure
-        fig.suptitle('Modelo Invertido HV ' + self.inversion.nombre)
+        fig.suptitle('HV Inversion Model for' + self.inversion.nombre)
         fig2 = Figure()
         p2 = FigureCanvas(fig2)
         for i in reversed(range(self.mdiArea_HV.layout.count())):
@@ -356,12 +356,11 @@ class Ui_Ventana_inversion(QtWidgets.QMdiSubWindow):
 
 
     def retranslateUi(self, Ventana_inversion):
-        Ventana_inversion.setWindowTitle(QtWidgets.QApplication.translate("Ventana_inversion", "Ventana de inversión", None, -1))
+        Ventana_inversion.setWindowTitle(QtWidgets.QApplication.translate("Ventana_inversion", "Inversion window", None, -1))
         self.groupBox.setTitle(QtWidgets.QApplication.translate("Ventana_inversion", "", None, -1))
-        self.pushButton_pinversion.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Parámetros de inversión", None, -1))
-        self.pushButton_guardarinv.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Guardar inversión", None, -1))
-        self.pushButton_ini_inv.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Invertir", None, -1))
-        self.pushButton_minicial.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Cargar modelo Inicial", None, -1))
-        self.pushButton_convergencia.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Convergencia", None,-1))
-        self.pushButton_cargarHV.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Cargar H/V", None, -1))
-
+        self.pushButton_pinversion.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Inversion parameters", None, -1))
+        self.pushButton_guardarinv.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Save inversion", None, -1))
+        self.pushButton_ini_inv.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Invert", None, -1))
+        self.pushButton_minicial.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Load initial model", None, -1))
+        self.pushButton_convergencia.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Convergence", None,-1))
+        self.pushButton_cargarHV.setText(QtWidgets.QApplication.translate("Ventana_inversion", "Load H/V", None, -1))

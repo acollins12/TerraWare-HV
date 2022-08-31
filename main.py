@@ -63,8 +63,8 @@ class MainWindow_EXEC():
 
     def cargar_VA(self):
         self.proy=Project.proyecto()
-        filename=QFileDialog.getOpenFileNames(None,"Abrir archivos de V.A.",os.getcwd(),"Text files (*.saf *.SAF)")
-        l1 = QTreeWidgetItem(["Proyecto V.A."])
+        filename=QFileDialog.getOpenFileNames(None,"Open seismic data file",os.getcwd(),"Text files (*.saf *.SAF)")
+        l1 = QTreeWidgetItem(["Data Project"])
 
         for file in filename[0]:
             name_HVSR_one=file.split('/')#(os.path.sep)
@@ -92,11 +92,11 @@ class MainWindow_EXEC():
 
     def cargar_HV(self):
         self.proy=Project.proyecto()
-        filename = QFileDialog.getOpenFileNames(None, "Abrir archivos de H/V", os.getcwd(),
+        filename = QFileDialog.getOpenFileNames(None, "Open H/V file", os.getcwd(),
                                                 "Text files (*.txt *.dat *.hv *.HV *.DAT *TXT)")
-        l1 = QTreeWidgetItem(["Proyecto H/V"])
+        l1 = QTreeWidgetItem(["H/V Project"])
         for file in filename[0]:
-            print("entra a los archivos")
+            print("Choose files")
             name_HVSR_one=file.split('/')#(os.path.sep)
             name_HVSR_one = name_HVSR_one[-1]
             l1_child=QTreeWidgetItem([name_HVSR_one])
@@ -122,7 +122,7 @@ class MainWindow_EXEC():
         self.proy.setarchi()
 
     def changeInvParams(self, index):
-        print("Sondeo "+ str(index))
+        print("Searching for parameter files "+ str(index))
         try:
             data = pd.read_csv("last_params.txt", header=None)
             self.ui.mdiArea_INV.subWindowList()[index].inversion.prof = data[0][0]
@@ -147,7 +147,7 @@ class MainWindow_EXEC():
             self.ui.mdiArea_INV.subWindowList()[index].inversion.vpgrad = data[0][19]
             self.ui.mdiArea_INV.subWindowList()[index].inversion.dengrad = data[0][20]
         except:
-            print("No hay archivo de parametros anteriores (last params)")
+            print("No file of previous parameters (last params)")
 
     def seleccionar_estacion(self, item):
         currentIndex = self.ui.treeWidget_project.topLevelItem(0).indexOfChild(item)

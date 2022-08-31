@@ -61,9 +61,9 @@ class Ui_dialoginvtype(object):
             pass
 
     def retranslateUi(self, inversion):
-        inversion.setWindowTitle(QtWidgets.QApplication.translate("inversion", "Inversión", None, -1))
-        self.label.setText(QtWidgets.QApplication.translate("inversion", "Elige tipo de inversión:", None, -1))
-        self.comboBox.setItemText(0, QtWidgets.QApplication.translate("inversion", "Método", None, -1))
+        inversion.setWindowTitle(QtWidgets.QApplication.translate("inversion", "Inversion", None, -1))
+        self.label.setText(QtWidgets.QApplication.translate("inversion", "Choose inversion type:", None, -1))
+        self.comboBox.setItemText(0, QtWidgets.QApplication.translate("inversion", "Method", None, -1))
         self.comboBox.setItemText(1, QtWidgets.QApplication.translate("inversion", "Particle Swarm Optimization", None, -1))
         self.comboBox.setItemText(2, QtWidgets.QApplication.translate("inversion", "Simulated Annealing", None, -1))
 

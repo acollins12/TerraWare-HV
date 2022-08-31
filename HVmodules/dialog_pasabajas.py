@@ -52,9 +52,9 @@ class Ui_pasabajas(object):
         QtCore.QMetaObject.connectSlotsByName(pasabajas)
 
     def retranslateUi(self, pasabajas):
-        pasabajas.setWindowTitle(QtWidgets.QApplication.translate("pasabajas", "Pasa bajas", None, -1))
-        self.groupBox_basabajas.setTitle(QtWidgets.QApplication.translate("pasabajas", "Frecuencia de corte pasa bajas", None, -1))
-        self.label_wfin.setText(QtWidgets.QApplication.translate("pasabajas", "Frecuencia de corte", None, -1))
+        pasabajas.setWindowTitle(QtWidgets.QApplication.translate("pasabajas", "Low-pass", None, -1))
+        self.groupBox_basabajas.setTitle(QtWidgets.QApplication.translate("pasabajas", "Low-pass cutoff frequency", None, -1))
+        self.label_wfin.setText(QtWidgets.QApplication.translate("pasabajas", "Cutoff frequency", None, -1))
 
 if __name__ == "__main__":
     import sys

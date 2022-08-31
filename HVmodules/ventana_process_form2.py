@@ -272,7 +272,7 @@ class Ui_Ventana_procesamiento(QtWidgets.QMdiSubWindow):
                                    'NS':self.procesamientoDB.NS,
                                    'EW':self.procesamientoDB.EW})
             self.procesamientoDB.name = name_HVSR_one[-1]
-            self.setWindowTitle("Procesamiento de estación " + self.procesamientoDB.name)
+            self.setWindowTitle("Processing " + self.procesamientoDB.name)
             self.dialogfilter= dialogfilter
             fig = Figure()
             p = FigureCanvas(fig)
@@ -296,7 +296,7 @@ class Ui_Ventana_procesamiento(QtWidgets.QMdiSubWindow):
             self.crudo = pd.DataFrame({'VE': self.procesamientoDB.VE,
                                        'NS': self.procesamientoDB.NS,
                                        'EW': self.procesamientoDB.EW})
-            self.setWindowTitle("Procesamiento de estación " + data[self.currentIndex]["name"])
+            self.setWindowTitle("Processing " + data[self.currentIndex]["name"])
             self.dialogfilter = dialogfilter
             fig = Figure()
             p = FigureCanvas(fig)
@@ -348,7 +348,7 @@ class Ui_Ventana_procesamiento(QtWidgets.QMdiSubWindow):
         self.dialogfilter.open()
 
     def save_esp(self):
-        filename = QtWidgets.QFileDialog.getSaveFileName(None, "Salvar Espectros de Amplitud", os.getcwd(), "Text files (*.txt)")
+        filename = QtWidgets.QFileDialog.getSaveFileName(None, "Save amplitude spectra", os.getcwd(), "Text files (*.txt)")
         self.procesamientoDB.guardar_esp_ampl(filename)
 
     def switchplot(self):
@@ -516,17 +516,17 @@ class Ui_Ventana_procesamiento(QtWidgets.QMdiSubWindow):
     def retranslateUi(self, Ventana_procesamiento):
         _translate = QtCore.QCoreApplication.translate
         Ventana_procesamiento.setWindowTitle(_translate("Ventana_procesamiento", "Ventana_procesamiento"))
-        self.groupBox.setTitle(_translate("Ventana_procesamiento", "Parámetros de procesamiento de H/V"))
-        self.label_norm.setText(_translate("Ventana_procesamiento", "Normalización:"))
-        self.label_tap.setText(_translate("Ventana_procesamiento", "Ventana de taper:"))
-        self.label_fhv.setText(_translate("Ventana_procesamiento", "Frecuencias para H/V:"))
-        self.label_trasl.setText(_translate("Ventana_procesamiento", "Traslape (%)"))
-        self.label_dt.setText(_translate("Ventana_procesamiento", "muestreo tiempo (dt)"))
+        self.groupBox.setTitle(_translate("Ventana_procesamiento", "H/V processing parameters"))
+        self.label_norm.setText(_translate("Ventana_procesamiento", "Normalization:"))
+        self.label_tap.setText(_translate("Ventana_procesamiento", "Taper window type:"))
+        self.label_fhv.setText(_translate("Ventana_procesamiento", "Frequency sampling:"))
+        self.label_trasl.setText(_translate("Ventana_procesamiento", "Overlap (%)"))
+        self.label_dt.setText(_translate("Ventana_procesamiento", "Sampling period (dt)"))
         self.label_konno.setText(_translate("Ventana_procesamiento", "Konno-Ohmachi:"))
-        self.comboBox_norm.setItemText(0, _translate("Ventana_procesamiento", "Energías Unitarias"))
-        self.comboBox_norm.setItemText(1, _translate("Ventana_procesamiento", "Suma de Energías"))
+        self.comboBox_norm.setItemText(0, _translate("Ventana_procesamiento", "Unit energies"))
+        self.comboBox_norm.setItemText(1, _translate("Ventana_procesamiento", "Sum of energies"))
         self.comboBox_norm.setItemText(2, _translate("Ventana_procesamiento", "Spectral Whitening"))
-        self.comboBox_norm.setItemText(3, _translate("Ventana_procesamiento", "Envolvente en tiempo"))
+        self.comboBox_norm.setItemText(3, _translate("Ventana_procesamiento", "Time envelope"))
 
         self.comboBox_tap.setItemText(0, _translate("Ventana_procesamiento", "Tukey"))
         self.comboBox_tap.setItemText(1, _translate("Ventana_procesamiento", "Hann"))
@@ -538,23 +538,22 @@ class Ui_Ventana_procesamiento(QtWidgets.QMdiSubWindow):
         self.comboBox_tap.setItemText(7, _translate("Ventana_procesamiento", "Cuadrada"))
         self.comboBox_tap.setItemText(8, _translate("Ventana_procesamiento", "Blackman-Harris"))
 
-        self.pushButton_saveHV.setText(_translate("Ventana_procesamiento", "Guardar H/V"))
+        self.pushButton_saveHV.setText(_translate("Ventana_procesamiento", "Save H/V"))
         self.pushButton_reset.setText(_translate("Ventana_procesamiento", "Reset"))
-        self.pushButton_savehvdir.setText(_translate("Ventana_procesamiento", "Guardar direccionales"))
-        self.pushButton_HVdir.setText(_translate("Ventana_procesamiento",  "H/V direccionales"))
-        self.pushButton_save_esp.setText(_translate("Ventana_procesamiento",  "Guardar espectros"))
-        self.label_df.setText(_translate("Ventana_procesamiento", "muestreo frecuencia (df)"))
-        self.pushButton_ini_process.setText(_translate("Ventana_procesamiento", "Procesar"))
-        self.pushButton_filtroButter.setText(_translate("Ventana_procesamiento", "Filtro de Butterworth"))
+        self.pushButton_savehvdir.setText(_translate("Ventana_procesamiento", "Save directional H/V"))
+        self.pushButton_HVdir.setText(_translate("Ventana_procesamiento",  "Directional H/V"))
+        self.pushButton_save_esp.setText(_translate("Ventana_procesamiento",  "Save spectra"))
+        self.label_df.setText(_translate("Ventana_procesamiento", "Frequency sampling rate (df)"))
+        self.pushButton_ini_process.setText(_translate("Ventana_procesamiento", "Process"))
+        self.pushButton_filtroButter.setText(_translate("Ventana_procesamiento", "Butterworth filter"))
         # self.label_butter.setText(_translate("Ventana_procesamiento", " Frecuencias de Butterworth:"))
         # self.label_wini.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">w inicial</p></body></html>"))
         # self.label_wfin.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">w final</p></body></html>"))
-        self.label_ffin.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">f final</p></body></html>"))
-        self.label_svents.setText(_translate("Ventana_procesamiento", "Segundos de la ventana:"))
-        self.label_fini.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">f inicial</p></body></html>"))
+        self.label_ffin.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">f max</p></body></html>"))
+        self.label_svents.setText(_translate("Ventana_procesamiento", "Window seconds:"))
+        self.label_fini.setText(_translate("Ventana_procesamiento", "<html><head/><body><p align=\"center\">f min</p></body></html>"))
         self.checkBox_onebit.setText(_translate("Ventana_procesamiento", "OneBit"))
-        self.checkBox_baseline.setText(_translate("Ventana_procesamiento", "Quitar tendencia"))
-        self.label_taper.setText(_translate("Ventana_procesamiento", "Factor de Tukey: "))
-        self.pushButton_spectra.setText(_translate("Ventana_procesamiento", "Espectros"))
-        self.label_vents.setText(_translate("Ventana_procesamiento", "Número de ventanas:"))
-
+        self.checkBox_baseline.setText(_translate("Ventana_procesamiento", "Detrend"))
+        self.label_taper.setText(_translate("Ventana_procesamiento", "Tukey factor: "))
+        self.pushButton_spectra.setText(_translate("Ventana_procesamiento", "Spectra"))
+        self.label_vents.setText(_translate("Ventana_procesamiento", "Number of windows:"))

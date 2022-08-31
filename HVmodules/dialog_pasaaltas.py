@@ -52,9 +52,9 @@ class Ui_pasaaltas(object):
         QtCore.QMetaObject.connectSlotsByName(pasaaltas)
 
     def retranslateUi(self, pasaaltas):
-        pasaaltas.setWindowTitle(QtWidgets.QApplication.translate("pasaaltas", "Pasa altas", None, -1))
-        self.groupBox_basaaltas.setTitle(QtWidgets.QApplication.translate("pasaaltas", "Frecuencia de corte pasa altas", None, -1))
-        self.label_wini.setText(QtWidgets.QApplication.translate("pasaaltas", "Frecuencia de corte", None, -1))
+        pasaaltas.setWindowTitle(QtWidgets.QApplication.translate("pasaaltas", "High-pass", None, -1))
+        self.groupBox_basaaltas.setTitle(QtWidgets.QApplication.translate("pasaaltas", "High-pass cutoff frequency", None, -1))
+        self.label_wini.setText(QtWidgets.QApplication.translate("pasaaltas", "Cutoff frequency", None, -1))
 
 if __name__ == "__main__":
     import sys

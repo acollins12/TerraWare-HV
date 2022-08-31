@@ -609,7 +609,7 @@ class process_DB():
             #df_200 = self.HV200
             df_900.to_csv(filesave[0], index=None, sep='\t', columns=["# frecuencia", "average", "stdminus", "stdplus", "SS et.al."])
         except:
-            print("Error en salvar H/V")
+            print("Error saving H/V")
 
     def guardar_esp_ampl(self, filesave):
         try:
@@ -629,7 +629,7 @@ class process_DB():
             #df_200 = self.HV200
             df_900.to_csv(filesave[0], index=None, sep='\t', columns=["# frecuencia", "NS", "EW", "VE"])
         except:
-            print("Error en salvar espectros de amplitud")
+            print("Error saving amplitude spectra")
 
     def guardar_DIRHV(self, filesave):
         try:
@@ -642,7 +642,7 @@ class process_DB():
             df_DIR = pd.DataFrame({'frec':fnew, 'NS/V':NHV, 'EW/V':EHV, 'H/V average':HVnew})
             df_DIR.to_csv(filesave[0], index=None, sep='\t', columns=["frec", "NS/V", "EW/V", "H/V average"])
         except:
-            print("Error en salvar H/V direccionales")
+            print("Error saving directional H/V")
 
     # DISCLAIMER: This function is copied from https://github.com/nwhitehead/swmixer/blob/master/swmixer.py,
     #             which was released under LGPL.
@@ -668,7 +668,7 @@ class process_DB():
         return resampled_signal
 
     def registros_plot_single(self, sub):
-        '''Graficos de los registros crudos
+        '''Graph of raw station record
            x=NS
            y=EW
            z=VE'''
@@ -694,15 +694,15 @@ class process_DB():
         ax3 = sub.add_subplot(3, 1, 3)
         #if self.tini != 0.0:
         ax3.plot(time_arr, self.EW, 'maroon')
-        ax3.set_xlabel('tiempo')  # , fontsize=30)
+        ax3.set_xlabel('Time (Sampling Periods)')  # , fontsize=30)
         ax3.set_ylabel('EW')      # , fontsize=30)
         ax3.tick_params(axis='both', which='minor')  # , labelsize=25)
         ax3.grid(b=True, which='major', color='k', linestyle=':')
 
         matplotlib.rc('xtick')  # , labelsize=30)
         matplotlib.rc('ytick')  # , labelsize=18)
-        ax1.set_title('Registros Crudos de Estación ' + str(self.nombre)+"\n"+
-                      "     tiempo inicial: {},  tiempo final {}".format(self.tini, final_time))  # , fontsize=40)
+        ax1.set_title('Raw station record ' + str(self.nombre)+"\n"+
+                      "     t0: {},  tf: {}".format(self.tini, final_time))  # , fontsize=40)
         #gs1.tight_layout(sub)
 
     def ventanas_plot(self, sub):
@@ -744,13 +744,13 @@ class process_DB():
             if self.wincleantot[i] != 0:
                 ax3.fill_between(time_arr1[self.vi[i]:self.vf[i]], ymin, ymax, facecolor=random.choice(self.color_names), alpha=0.4)
         ax3.set_ylabel('EW')  # , fontsize=30)
-        ax3.set_xlabel('tiempo')
+        ax3.set_xlabel('Time (Sampling Periods)')
         ax3.tick_params(axis='both', which='minor')  # , labelsize=25)
         ax3.grid(b=True, which='major', color='k', linestyle=':')
         matplotlib.rc('xtick')  # , labelsize=30)
         matplotlib.rc('ytick')  # , labelsize=18)
-        ax1.set_title('Ventanas de Estación ' + str(self.nombre) + "\n" +
-         "tiempo inicial: {},  tiempo final {}".format(self.tini, final_time))
+        ax1.set_title('Station Windows ' + str(self.nombre) + "\n" +
+         "t0: {},  tf: {}".format(self.tini, final_time))
         #gs1.tight_layout(sub)
         return
 
@@ -845,8 +845,8 @@ class process_DB():
         ax1.legend(loc="upper right")
         ax1.set_xscale("symlog")
         ax1.set_yscale("linear")
-        ax1.set_ylabel('Amplitud')
-        ax1.set_xlabel('Frecuencia (Hz)')
+        ax1.set_ylabel('Amplitude')
+        ax1.set_xlabel('Frequency (Hz)')
         spacingyma = (maximo-minimo)/5
         majorLocator = MultipleLocator(spacingyma)
         spacingymi = (maximo-minimo)/5/10
@@ -860,7 +860,7 @@ class process_DB():
         #ax1.tick_params(axis='y', which='major')  # , labelsize=45)
         ax1.set_ylim(minimo - 0.1, maximo + 0.1)
         ax1.set_xlim(left=self.fini, right=self.ffin)
-        ax1.set_title("Espectros de Amplitud de Estación " + self.nombre)
+        ax1.set_title("Amplitude Spectra for " + self.nombre)
         #ax1.suptitle('Espectros de Amplitud de Estación ' + self.nombre)
         #gs1.tight_layout(sub)
         return
@@ -950,8 +950,8 @@ class process_DB():
         ax1.legend(loc="upper right") #prop={'size': 55},
         ax1.set_xscale("symlog")
         ax1.set_yscale("linear")
-        ax1.set_ylabel('Amplitud')
-        ax1.set_xlabel('Frecuencia (Hz)')
+        ax1.set_ylabel('Amplitude')
+        ax1.set_xlabel('Frequency (Hz)')
         ax1.yaxis.set_minor_locator(minorLocatory)
         ax1.grid(which='minor', color='lightgrey', linestyle=':', linewidth=0.5)
         ax1.yaxis.set_major_locator(majorLocator)
@@ -961,7 +961,7 @@ class process_DB():
         ax1.tick_params(axis='y', which='major')  # , labelsize=45)
         ax1.set_ylim(minimo - 0.1, maximo + 2.0)
         ax1.set_xlim(left=self.fini, right=self.ffin)
-        ax1.set_title("H/V direccionales de estación "+ self.nombre)
+        ax1.set_title("Directional H/V for "+ self.nombre)
         #gs1.tight_layout(sub)
 
 
@@ -1032,8 +1032,8 @@ class process_DB():
         #dfnew.to_csv("comparacion_"+self.nombre+".txt", index=None,sep='\t', columns=["f","TW","NAK","SS1","SS2"])
         ax1.set_xscale("symlog")
         ax1.set_yscale("linear")
-        ax1.set_ylabel('Amplitud')
-        ax1.set_xlabel('Frecuencia (Hz)')
+        ax1.set_ylabel('Amplitude')
+        ax1.set_xlabel('Frequency (Hz)')
         ax1.yaxis.set_minor_locator(minorLocatory)
         ax1.grid(which='minor', color='lightgrey', linestyle=':', linewidth=0.5)
         ax1.yaxis.set_major_locator(majorLocator)
@@ -1043,7 +1043,7 @@ class process_DB():
         ax1.tick_params(axis='y', which='major')  # , labelsize=45)
         ax1.set_ylim(np.min(self.stdminus) - 0.1, np.max(self.stdplus) +2.0)
         ax1.set_xlim(left=self.fini, right=self.ffin)
-        ax1.set_title('H/V de estación ' + self.nombre)
+        ax1.set_title('H/V for ' + self.nombre)
         #gs1.tight_layout(sub)
 
     def normalizacion(self, NS, EW, Z, Nespec):
@@ -1414,4 +1414,3 @@ class process_DB():
             #print(len(NSfilt))
 
         return NSfilt, ESfilt, VSfilt
-

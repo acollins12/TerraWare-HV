@@ -201,10 +201,10 @@ class inver_DB():
         ax1.loglog(self.conv.iloc[:,0], "mediumvioletred")
         #ax1.set_xscale("log")
         #ax1.set_yscale("log")
-        ax1.set_xlabel('Iteraciones')
-        ax1.set_ylabel('Error del ajuste total')
+        ax1.set_xlabel('Iterations')
+        ax1.set_ylabel('Misfit')
         ax1.grid(True,which="both",ls="-")
-        ax1.set_title("Convergencia de estación "+self.nombre)
+        ax1.set_title("Convergence for "+self.nombre)
         #ax1.grid(which='minor', color='k', linestyle=':')
         #ax1.grid(which='major', color='k', linestyle=':')
         #ax1.tick_params(axis='both', which='minor')#, labelsize=0)
@@ -258,12 +258,12 @@ class inver_DB():
         long=200
         nmodels=int(len(self.adjusts_N)/long)
         try:
-            ax1.plot(self.HV['f'], self.HV['HVSR'], 'k', label='HV Observado')
+            ax1.plot(self.HV['f'], self.HV['HVSR'], 'k', label='Observed H/V')
             minimo = np.min(self.HV['HVSR'])  # np.min(HV - std)0
             maximo = np.max(self.HV['HVSR'])  # np.max(HV + std)
             ax1.set_xlim(left=np.min(self.HV['f']), right=np.max(self.HV['f']))
         except:
-            ax1.plot(self.HV.iloc[:,0], self.HV.iloc[:,1], 'k', label='HV Observado')
+            ax1.plot(self.HV.iloc[:,0], self.HV.iloc[:,1], 'k', label='Observed H/V')
             minimo = np.min(self.HV.iloc[:,1])  # np.min(HV - std)0
             maximo = np.max(self.HV.iloc[:,1])  # np.max(HV + std)
             ax1.set_xlim(left=np.min(self.HV.iloc[:,0]), right=np.max(self.HV.iloc[:,0]))
@@ -273,7 +273,7 @@ class inver_DB():
         #for i in range(nmodels-1):
         #    ax1.plot(self.adjust.iloc[:,0], self.adjusts_N[i*200:(i+1)*200,0],  alpha=0.1)
 
-        ax1.plot(self.adjust.iloc[:,0], self.adjust.iloc[:,1], '--b', linewidth=1, label='HV Invertido')
+        ax1.plot(self.adjust.iloc[:,0], self.adjust.iloc[:,1], '--b', linewidth=1, label='Inversion H/V')
         for ii in range(10):
             ax1.plot([ii] * 5, np.linspace(minimo - 10, maximo + 10, 5), "k", linestyle=":", linewidth=0.5)
         #mingridx = np.linspace(0.1, 20.0, 100)
@@ -283,8 +283,8 @@ class inver_DB():
         ax1.legend(loc="upper right")
         ax1.set_xscale("symlog")
         ax1.set_yscale("linear")
-        ax1.set_ylabel('Amplitud')
-        ax1.set_xlabel('Frecuencia (Hz)')
+        ax1.set_ylabel('Amplitude')
+        ax1.set_xlabel('Frequency (Hz)')
         ax1.yaxis.set_minor_locator(minorLocatory)
         ax1.grid(which='minor', color='lightgrey', linestyle=':', linewidth=0.5)
         ax1.yaxis.set_major_locator(majorLocator)
@@ -293,7 +293,7 @@ class inver_DB():
         ax1.tick_params(axis='x', which='major')  # , labelsize=45)
         ax1.tick_params(axis='y', which='major')  # , labelsize=45)
         ax1.set_ylim(minimo - 0.5, maximo + 1.2)
-        ax1.set_title("Modelo invertido vs. modelo observado estación "+self.nombre)
+        ax1.set_title("Inversion model vs. observed model for "+self.nombre)
 
     def plotInversion(self, sub):
         self.sub=sub
@@ -334,8 +334,8 @@ class inver_DB():
 
         ax1.set_yscale("linear")
         ax1.set_xscale("linear")
-        ax1.set_xlabel(r'Velocidad ($\frac{m}{s}$)')
-        ax1.set_ylabel('Profundidad (m)')
+        ax1.set_xlabel(r'Velocity ($\frac{m}{s}$)')
+        ax1.set_ylabel('Depth (m)')
 
         ax1.set_title('VP', y=1.02)
         ax1.tick_params(axis='x', which='major')
@@ -353,18 +353,18 @@ class inver_DB():
         self.ax2.tick_params(axis='x', which='minor')
         self.ax2.grid(b=True, which='minor', color='grey', linestyle=':')
         self.ax2.grid(b=True, which='major', color='k', linestyle=':')
-        self.ax2.set_xlabel(r'Velocidad ($\frac{m}{s}$)')
+        self.ax2.set_xlabel(r'Velocity ($\frac{m}{s}$)')
         self.ax2.set_xlim(0.0, np.max(self.results.iloc[:, 2]) + 200)
         self.ax2.set_ylim(-np.max(self.results.iloc[:, 0]), 0.0)
 
-        ax3.set_title('Densidades', y=1.02)
+        ax3.set_title('Density', y=1.02)
         ax3.tick_params(axis='y', which='major', labelsize=0)
         ax3.tick_params(axis='y', which='minor', labelsize=0)
         ax3.tick_params(axis='x', which='major')
         ax3.tick_params(axis='x', which='minor')
         ax3.grid(b=True, which='minor', color='grey', linestyle=':')
         ax3.grid(b=True, which='major', color='k', linestyle=':')
-        ax3.set_xlabel(r'Densidad ($\frac{kg}{m^3}$)')
+        ax3.set_xlabel(r'Density ($\frac{kg}{m^3}$)')
         ax3.set_xlim(np.min(self.results.iloc[:, 3]) - 500, np.max(self.results.iloc[:, 3]) + 500)
         ax3.set_ylim(-np.max(self.results.iloc[:, 0]), 0.0)
 
@@ -398,7 +398,7 @@ class inver_DB():
         #self.sub.clf()
         """fig = Figure()
         p = FigureCanvas(fig)
-        
+
         self.mdiArea_HV.layout.addWidget(p)
         self.mdiArea_HV.layout.setMenuBar(NavigationToolbar(p, self.mdiArea_HV))
         self.mdiArea_HV.plotsis = p.figure
@@ -464,8 +464,8 @@ class inver_DB():
         # ax1.legend(prop={'size': 55}, loc="upper right")
         ax1.set_xscale("symlog")
         ax1.set_yscale("linear")
-        ax1.set_ylabel('Amplitud')
-        ax1.set_xlabel('Frecuencia (Hz)')
+        ax1.set_ylabel('Amplitude')
+        ax1.set_xlabel('Frequency (Hz)')
         ax1.yaxis.set_minor_locator(minorLocatory)
         ax1.grid(which='minor', color='lightgrey', linestyle=':', linewidth=0.5)
         ax1.yaxis.set_major_locator(majorLocator)
@@ -474,5 +474,4 @@ class inver_DB():
         ax1.tick_params(axis='x', which='major')  # , labelsize=45)
         ax1.tick_params(axis='y', which='major')  # , labelsize=45)
         ax1.set_ylim(minimo - 0.1, maximo + 1.2)
-        ax1.set_title("H/V observado de estación "+self.nombre)
-
+        ax1.set_title("Observed H/V for "+self.nombre)

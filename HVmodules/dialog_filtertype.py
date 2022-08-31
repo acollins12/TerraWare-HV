@@ -85,13 +85,13 @@ class Ui_Filtrobutter(object):
             pass
 
     def retranslateUi(self, Filtrobutter):
-        Filtrobutter.setWindowTitle(QtWidgets.QApplication.translate("Filtrobutter", "Selección de Filtro", None, -1))
-        self.groupBox_tipofiltro.setTitle(QtWidgets.QApplication.translate("Filtrobutter", "Filtro Butterworth", None, -1))
-        self.label_tipofiltro.setText(QtWidgets.QApplication.translate("Filtrobutter", "Tipo de Filtro:", None, -1))
-        self.comboBox_tipofiltro.setItemText(0, QtWidgets.QApplication.translate("Filtrobutter", "Selecciona Filtro", None, -1))
-        self.comboBox_tipofiltro.setItemText(1, QtWidgets.QApplication.translate("Filtrobutter", "Pasa bandas", None, -1))
-        self.comboBox_tipofiltro.setItemText(2, QtWidgets.QApplication.translate("Filtrobutter", "Pasa bajas", None, -1))
-        self.comboBox_tipofiltro.setItemText(3, QtWidgets.QApplication.translate("Filtrobutter", "Pasa altas", None, -1))
+        Filtrobutter.setWindowTitle(QtWidgets.QApplication.translate("Filtrobutter", "Filter selection", None, -1))
+        self.groupBox_tipofiltro.setTitle(QtWidgets.QApplication.translate("Filtrobutter", "Butterworth filter", None, -1))
+        self.label_tipofiltro.setText(QtWidgets.QApplication.translate("Filtrobutter", "Filter type:", None, -1))
+        self.comboBox_tipofiltro.setItemText(0, QtWidgets.QApplication.translate("Filtrobutter", "Filter selection", None, -1))
+        self.comboBox_tipofiltro.setItemText(1, QtWidgets.QApplication.translate("Filtrobutter", "Band-pass", None, -1))
+        self.comboBox_tipofiltro.setItemText(2, QtWidgets.QApplication.translate("Filtrobutter", "Low-pass", None, -1))
+        self.comboBox_tipofiltro.setItemText(3, QtWidgets.QApplication.translate("Filtrobutter", "High-pass", None, -1))
 
 if __name__ == "__main__":
     import sys

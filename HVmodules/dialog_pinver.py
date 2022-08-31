@@ -152,18 +152,18 @@ class Ui_dialogpinver(object):
 
     def retranslateUi(self, dialogpinver):
         _translate = QtCore.QCoreApplication.translate
-        dialogpinver.setWindowTitle(_translate("dialogpinver", "Parámetros de inversión"))
+        dialogpinver.setWindowTitle(_translate("dialogpinver", "Inversion parameters"))
         self.groupBox_pinver.setTitle(_translate("dialogpinver", "PSO"))
-        self.label_iter.setText(_translate("dialogpinver", "Iteraciones:"))
-        self.label_parts.setText(_translate("dialogpinver", "Particulas:"))
-        self.label_wini.setText(_translate("dialogpinver", "Factor de inercia inicial:"))
-        self.label_wa.setText(_translate("dialogpinver", "Amortiguamiento:"))
-        self.label_c1.setText(_translate("dialogpinver", "Coeficiente cognitivo:"))
-        self.label_c2.setText(_translate("dialogpinver", "Coeficiente social:"))
-        self.label_velmax.setText(_translate("dialogpinver", "Factor de velocidad:"))
-        self.label_vpgrad.setText(_translate("dialogpinver", "Gradiente de Vp:"))
-        self.label_vsgrad.setText(_translate("dialogpinver", "Gradiente de Vs:"))
-        self.label_dengrad.setText(_translate("dialogpinver", "Gradiente de densidad:"))
+        self.label_iter.setText(_translate("dialogpinver", "Iterations:"))
+        self.label_parts.setText(_translate("dialogpinver", "Particles:"))
+        self.label_wini.setText(_translate("dialogpinver", "Initial inertia factor:"))
+        self.label_wa.setText(_translate("dialogpinver", "Damping:"))
+        self.label_c1.setText(_translate("dialogpinver", "Cognitive coefficient:"))
+        self.label_c2.setText(_translate("dialogpinver", "Social coefficient:"))
+        self.label_velmax.setText(_translate("dialogpinver", "Velocity factor:"))
+        self.label_vpgrad.setText(_translate("dialogpinver", "Vp gradient:"))
+        self.label_vsgrad.setText(_translate("dialogpinver", "Vs gradient:"))
+        self.label_dengrad.setText(_translate("dialogpinver", "Density gradient:"))
         self.pushButton_info.setText(_translate("dialogpinver", "Info"))
 
 if __name__ == "__main__":
@@ -174,4 +174,3 @@ if __name__ == "__main__":
     ui.setupUi(dialogpinver)
     dialogpinver.show()
     sys.exit(app.exec_())
-
