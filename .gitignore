@@ -1,0 +1,5 @@
+# Ignore output files
+*.txt
+*.dat
+__pycache__
+Script.gnu
